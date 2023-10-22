@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+}
+
+.PLANNED {
+  background-color: yellow;
+}
+
+.ONGOING {
+  background-color: orange;
+}
+.DONE {
+  background-color: aquamarine;
+}
