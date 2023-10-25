@@ -8,8 +8,16 @@ type taskProps = {
 };
 export const Task = ({ title, status, id }: taskProps) => {
   const removeTask = myStore((store) => store.removeTask);
+  const setDraggedTask = myStore((store) => store.setDraggedTask);
+
   return (
-    <div className="bg-white rounded-lg min-h-[5rem] relative text-black p-3 flex flex-col justify-between">
+    <div
+      className="bg-white rounded-lg min-h-[5rem] relative text-black p-3 flex flex-col justify-between cursor-grabbing"
+      draggable
+      onDragStart={() => {
+        setDraggedTask(id);
+      }}
+    >
       <button
         className="text-red-400 absolute top-2 right-4"
         onClick={() => {
